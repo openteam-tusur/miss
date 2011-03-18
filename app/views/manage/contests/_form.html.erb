@@ -8,6 +8,7 @@
   <%= form.buttons do %>
     <%= form.commit_button :button_html => { :class => "button" } %>
     <li><%= link_to t(:cancel), smart_resource_url, :class => "button light" %></li>
+    <li><%= link_to t(:delete), [:manage, @contest], :class => "button light", :method => :delete, :confirm => "Вы точно хотите удалить конкурс со всеми его участницами?" unless @contest.new_record? %></li>
   <% end %>
 <% end %>
 
