@@ -1,9 +1,11 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru">
 <head>
+  <title>Мисс ТУСУР</title>
   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
   <%= csrf_meta_tag %>
-  <title>Мисс ТУСУР</title>
+  <meta content="Мисс ТУСУР, интернет-голосование конкурса красоты, Томский государственный университет систем управления и радиоэлектроники, конкурс красоты" name="keywords">
+  <meta content="Интернет-голосование конкурса красоты Мисс ТУСУР (Томский государственный университет систем управления и радиоэлектроники)" name="description">
   <%= favicon_link_tag %>
   <%= stylesheet_link_tag "screen.css", :media => "screen, projection" %>
   <%= stylesheet_link_tag "print.css", :media => "print" %>
@@ -14,7 +16,38 @@
   <%= javascript_include_tag "rails.js" %>
 </head>
 <body>
-  <%= yield %>
+  <div id="content_wrapper">
+    <div id="left_side">
+      <div class="contests">
+        <ul>
+          <li><a href="#">Мисс 2011</a></li>
+          <li><a href="#">Мисс 2010</a></li>
+          <li><a href="#">Мисс 2009</a></li>
+          <li><a href="#">Мисс 2008</a></li>
+          <li><a href="#">Мисс 2007</a></li>
+        </ul>
+      </div>
+      <div class="promoters">
+        тут будут спонсоры
+      </div>
+    </div>
+    <div id="right_side">
+      <div id="header">
+        <div class="tusur">
+          <a href="http://www.tusur.ru/">Томский государственный университет систем управления и радиоэлектроники</a>
+        </div>
+        <div class="miss">
+          <a href="/">Мисс ТУСУР 2011</a>
+        </div>
+      </div>
+      <div id="content">
+        <%= yield %>
+      </div>
+    </div>
+  </div>
+  <div id="footer_wrapper">
+    подвал
+  </div>
 </body>
 </html>
 
