@@ -6,6 +6,12 @@ GIT
       has_scope (~> 0.5.0)
       responders (~> 0.6.0)
 
+GIT
+  remote: git://github.com/tacid/russian
+  revision: b4106feb8d9f83496a8b1ec33861c0b26654cba1
+  specs:
+    russian (0.2.8.pre)
+
 GEM
   remote: http://gems.openteam.ru/
   specs:
@@ -132,7 +138,6 @@ GEM
       railties (~> 3.0)
       rspec (~> 2.5.0)
     rubyzip (0.9.4)
-    russian (0.2.7)
     selenium-webdriver (0.1.3)
       childprocess (~> 0.1.5)
       ffi (~> 0.6.3)
@@ -170,6 +175,6 @@ DEPENDENCIES
   rails3-generators
   rr
   rspec-rails
-  russian
+  russian!
   spork
   sqlite3-ruby

@@ -41,10 +41,10 @@ gem "formtastic"
 gem "paperclip"
 
 #inherited_resources
-gem 'inherited_resources',          :git => 'git://github.com/josevalim/inherited_resources'
+gem 'inherited_resources', :git => 'git://github.com/josevalim/inherited_resources'
 
 #localization
-gem 'russian'
+gem 'russian', :git => 'git://github.com/tacid/russian'
 
 # attachment
 gem "paperclip"
