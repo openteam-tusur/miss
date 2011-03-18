@@ -4,6 +4,7 @@ class Member < ActiveRecord::Base
 
   belongs_to :contest
   has_many :photos, :dependent => :destroy
+  has_many :votings
 
   default_scope order('position, slug')
 

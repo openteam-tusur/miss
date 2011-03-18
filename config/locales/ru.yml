@@ -51,3 +51,10 @@ ru:
       create: "Создать %{model}"
       update: "Сохранить %{model}"
 
+  votes:
+    zero: 'голосов нет'
+    one: '%{count} голос'
+    few: '%{count} голоса'
+    many: '%{count} голосов'
+    other: '%{count} голосов'
+

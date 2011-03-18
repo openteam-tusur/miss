@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110318090438) do
+ActiveRecord::Schema.define(:version => 20110318101832) do
 
   create_table "contests", :force => true do |t|
     t.integer  "year"
@@ -49,6 +49,14 @@ ActiveRecord::Schema.define(:version => 20110318090438) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "position"
+  end
+
+  create_table "votings", :force => true do |t|
+    t.integer  "member_id"
+    t.string   "remote_ip"
+    t.string   "remote_proxy"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

@@ -1,0 +1,6 @@
+<% title @member.name %>
+
+<%= render :partial => "/votings/vote", :locals => {:member => @member} %>
+
+<%= link_to 'Другие участницы', contest_path(@contest) %>
+

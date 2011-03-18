@@ -6,7 +6,13 @@ class MembersController < ApplicationController
   end
 
   def show
-    @members = @contest.members.find_by_slug(params[:member_id])
+    @member = @contest.members.find_by_slug(params[:member_id])
+  end
+
+  def voting
+    @member = @contest.members.find_by_slug(params[:member_id])
+    Voting.vote(@member, request)
+    redirect_to :back
   end
 
   private

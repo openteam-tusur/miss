@@ -23,6 +23,7 @@ MissTusur::Application.routes.draw do
   end
   match "/:contest_id" => "members#index", :as => :contest
   match "/:contest_id/:member_id" => "members#show", :as => :member
+  match "/:contest_id/:member_id/vote" => "members#voting", :as => :voting, :via => :post
   root :to => "members#index"
   # The priority is based upon order of creation:
   # first created -> highest priority.

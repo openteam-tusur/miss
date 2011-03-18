@@ -10,6 +10,7 @@
         <p><strong><%= link_to member.name, member_path(@contest, member) %></strong></p>
         <%= simple_format(member.annotation).gilensize %>
       </div>
+      <%= render :partial => "/votings/vote", :locals => {:member => member} %>
     </div>
   <% end %>
   </div>
