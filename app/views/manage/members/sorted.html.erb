@@ -1,0 +1,12 @@
+<%= form_tag update_sorted_manage_contest_members_path(@contest), :method => :put do %>
+  <ul class="sortable">
+    <% @members.each do |member| %>
+      <li>
+          <%= label_tag "member_#{member.id}", member.name %>
+          <%= hidden_field_tag "members[]", member.id %>
+      </li>
+    <% end %>
+  </ul>
+  <%= submit_tag t(:save), :class => "button" %>
+  <%= link_to t(:cancel), manage_contest_members_path(@contest), :class => "button" %>
+<% end %>

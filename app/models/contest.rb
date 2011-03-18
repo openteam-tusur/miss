@@ -20,6 +20,13 @@ class Contest < ActiveRecord::Base
     return false if voting_started_on.to_time > Time.now || voting_finished_on.to_time < Time.now
     true
   end
+
+  def update_sorted_members(members_ids)
+    members_ids.each_with_index do |member_id, index|
+      members.find(member_id).update_attribute(:position, index+1)
+    end
+  end
+
 end
 
 

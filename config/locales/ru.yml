@@ -3,6 +3,7 @@ ru:
   cancel: Отмена
   delete: Удалить
   edit: Изменить
+  save: Сохранить
 
 
   activerecord:

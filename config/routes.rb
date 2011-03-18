@@ -2,9 +2,16 @@ MissTusur::Application.routes.draw do
 
   namespace :manage do
     resources :contests do
-      put :set_current, :on => :member
-      put :publish, :on => :member
-      resources :members
+      member do
+        put :set_current
+        put :publish
+      end
+      resources :members do
+        collection do
+          get :sorted
+          put :update_sorted
+        end
+      end
     end
     root :to => "contests#index"
   end

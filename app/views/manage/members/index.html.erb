@@ -1,1 +1,9 @@
+<% @members.each do |member| %>
+  <p>
+    <%= link_to member.name, manage_contest_member_path(@contest, member) %>
+  </p>
+<% end %>
+
 <%= link_to t(:new), new_manage_contest_member_path(@contest) %>
+
+<%= link_to "Сортировка участниц", sorted_manage_contest_members_path(@contest) %>
