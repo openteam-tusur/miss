@@ -2,18 +2,21 @@ source "http://gems.openteam.ru"
 
 gem "rails"
 
-group :production do
-  gem "pg"
-  gem "unicorn"
+group :development, :test do
+  gem 'rspec-rails'
+end
+
+group :production, :development do
+  gem "pg", :require => false
 end
 
 group :test do
-  gem "sqlite3-ruby", :require => "sqlite3"
-  gem "capybara"
-  gem "rr"
-  gem "ryba"
-  gem "launchy"
-  gem "factory_girl_rails"
+  gem 'sqlite3-ruby', :require => 'sqlite3'
+  gem 'capybara'
+  gem 'rr'
+  gem 'faker'
+  gem 'launchy'
+  gem 'factory_girl_rails'
 end
 
 group :development do
