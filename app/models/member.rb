@@ -3,6 +3,7 @@ class Member < ActiveRecord::Base
   validates_presence_of :slug, :name, :annotation, :content
 
   belongs_to :contest
+  has_many :photos, :dependent => :destroy
 
   default_scope order('position, slug')
 

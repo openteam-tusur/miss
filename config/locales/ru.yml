@@ -21,6 +21,8 @@ ru:
         voting_finished_on: Окончания голосования
         year: Год
         sponsors: Спонсоры
+      photo:
+        image: Фотография
       member:
         name: ФИО
         annotation: Краткое описание

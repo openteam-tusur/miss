@@ -47,8 +47,12 @@ module Paperclip
     def make
       dst = super
 
+      p "======================="
+
       attachment.instance_write("original_dimensions", @current_geometry) if @dimensions.blank?
-      attachment.instance_write("#{@style_name}_dimensions", Geometry.from_file(dst))
+      attachment.instance_write("#{@style_name}_dimensions", Geometry.from_file(dst).to_s)
+
+      p Geometry.from_file(dst).to_s
 
       return dst
     end

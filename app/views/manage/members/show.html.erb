@@ -1,3 +1,18 @@
 <%= link_to 'Все участницы', manage_contest_members_path(@contest) %>
 <%= @member.name %>
 <%= link_to t(:edit), edit_manage_contest_member_path(@contest, @member) %>
+
+
+<% @member.photos.each do |photo| %>
+  <%= photo.image.dimensions("small") %>
+  <%= link_to image_tag(photo.image.url(:small), :size => photo.image.dimensions("small"), :alt => @member.name), photo.image.url(:large) %>
+  <%= link_to t(:delete), [:manage, @contest, @member, photo], :method => :delete, :confirm => "Вы уверены что хотите удалить фотографию?" %>
+<% end %>
+
+<%= semantic_form_for @member.photos.new, :url => manage_contest_member_photos_path(@contest, @member), :html => {:multipart => true} do |form| %>
+  <%= form.input :image, :as => :file %>
+  <%= form.buttons do %>
+    <%= form.commit_button "Добавить"%>
+  <% end %>
+<% end %>
+
