@@ -4,8 +4,8 @@
   <title>Мисс ТУСУР</title>
   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
   <%= csrf_meta_tag %>
-  <meta content="Мисс ТУСУР, интернет-голосование конкурса красоты, Томский государственный университет систем управления и радиоэлектроники, конкурс красоты" name="keywords">
-  <meta content="Интернет-голосование конкурса красоты Мисс ТУСУР (Томский государственный университет систем управления и радиоэлектроники)" name="description">
+  <meta name="keywords" content="Мисс ТУСУР, интернет-голосование конкурса красоты, Томский государственный университет систем управления и радиоэлектроники, конкурс красоты" />
+  <meta name="description" content="Интернет-голосование конкурса красоты Мисс ТУСУР (Томский государственный университет систем управления и радиоэлектроники)" />
   <%= favicon_link_tag %>
   <%= stylesheet_link_tag "screen.css", :media => "screen, projection" %>
   <%= stylesheet_link_tag "print.css", :media => "print" %>
@@ -46,7 +46,17 @@
     </div>
   </div>
   <div id="footer_wrapper">
-    подвал
+    <div id="footer">
+      <div class="copyright">
+        <p>&copy; Центр веб-технологий и информационных ресурсов, 1999&ndash;<%= Date.today.year %></p>
+        <p><strong>Томский государственный университет систем управления и радиоэлектроники</strong></p>
+        <p><strong>Адрес:</strong> 634050, г.Томск, пр.Ленина, 40</p>
+        <p><strong>Тел.:</strong> (3822) 51-05-30 <strong>Факс:</strong> (3822) 51-32-62, 52-63-65 <strong>E-mail:</strong> <a href="mailto:office@tusur.ru">office@tusur.ru</a></p>
+      </div>
+      <div class="openteam">
+        <a href="http://openteam.ru/" title="OpenTeam. Сделано с любовью">OpenTeam. Сделано с любовью</a>
+      </div>
+    </div>
   </div>
 </body>
 </html>
