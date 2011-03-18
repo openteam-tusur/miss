@@ -1,0 +1,9 @@
+.bundle
+db/*.sqlite3
+log/*.log
+tmp/
+bin/
+
+public/stylesheets/*.css
+config/database.yml
+
