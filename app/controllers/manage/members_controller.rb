@@ -1,5 +1,5 @@
 class Manage::MembersController < Manage::ApplicationController
-  belongs_to :contest
+  belongs_to :contest, :finder => :find_by_year
   defaults :finder => :find_by_slug
 
   custom_actions :collection => [:sorted, :update_sorted], :resource => [:sort_photos, :update_sort_photos]

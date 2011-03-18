@@ -13,6 +13,8 @@ ru:
       index: Список конкурсов
       new: Добавление конкурса
       edit: Изменение конкурса
+    members:
+      index: Участницы конкурса
 
   activerecord:
     attributes:

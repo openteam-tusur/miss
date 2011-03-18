@@ -1,4 +1,5 @@
 class Manage::ContestsController < Manage::ApplicationController
+  defaults :finder => :find_by_year
   actions :all, :except => [:show]
   custom_actions :resource => [:set_current, :publish]
 

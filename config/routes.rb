@@ -21,6 +21,9 @@ MissTusur::Application.routes.draw do
     end
     root :to => "contests#index"
   end
+  match "/:contest_id" => "members#index", :as => :contest
+  match "/:contest_id/:member_id" => "members#show", :as => :member
+  root :to => "members#index"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -70,7 +73,6 @@ MissTusur::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => "welcome#index"
 
   # See how all your routes lay out with "rake routes"
 

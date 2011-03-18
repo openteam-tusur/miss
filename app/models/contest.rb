@@ -3,6 +3,7 @@ class Contest < ActiveRecord::Base
   validates_uniqueness_of :year
 
   default_scope :order => 'year desc'
+  scope         :published,  where(:published => true)
 
   has_many :members, :dependent => :destroy
 
@@ -14,6 +15,10 @@ class Contest < ActiveRecord::Base
     self.update_all(:current => false)
     contest.current = true
     contest.save
+  end
+
+  def to_param
+    year.to_s
   end
 
   def during_voting?
