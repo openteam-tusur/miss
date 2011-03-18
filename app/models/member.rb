@@ -11,6 +11,7 @@ class Member < ActiveRecord::Base
   end
 end
 
+
 # == Schema Information
 #
 # Table name: members
@@ -21,7 +22,7 @@ end
 #  annotation :text
 #  content    :text
 #  nomination :string(255)
-#  priority   :integer
+#  position   :integer
 #  contest_id :integer
 #  created_at :datetime
 #  updated_at :datetime

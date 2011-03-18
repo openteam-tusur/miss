@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110318060915) do
+ActiveRecord::Schema.define(:version => 20110318073700) do
 
   create_table "contests", :force => true do |t|
     t.integer  "year"
@@ -31,6 +31,21 @@ ActiveRecord::Schema.define(:version => 20110318060915) do
     t.string   "nomination"
     t.integer  "position"
     t.integer  "contest_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "photos", :force => true do |t|
+    t.integer  "member_id"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.string   "image_fingerprint"
+    t.string   "image_large_dimensions"
+    t.string   "image_original_dimensions"
+    t.string   "image_normal_dimensions"
+    t.string   "image_small_dimensions"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

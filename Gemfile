@@ -46,3 +46,6 @@ gem 'inherited_resources',          :git => 'git://github.com/josevalim/inherite
 #localization
 gem 'russian'
 
+# attachment
+gem "paperclip"
+
