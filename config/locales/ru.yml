@@ -24,6 +24,7 @@ ru:
       member: участница
 
   formtastic:
+    required: Обязательно для заполнения
     actions:
       create: "Создать %{model}"
       update: "Сохранить %{model}"

@@ -1,0 +1,38 @@
+=field_style
+  +arial_font_stack
+  border: 1px solid #777
+  +border-radius(3px)
+  background-color: #f7f7f7
+  padding: 4px 3px
+  &:focus
+    border-color: #333
+    background-color: #fff6d5
+
+.formtastic
+  .inputs
+    li
+      margin-bottom: 15px
+    abbr
+      cursor: help
+      color: #aa0000
+      margin-left: 3px
+    .string,
+    .password,
+    .numeric,
+    .date
+      label
+        display: block
+      input
+        +field_style
+    .text
+      label
+        display: block
+      textarea
+        +field_style
+
+  .buttons
+    ol
+      +clearfix
+      li
+        float: left
+
