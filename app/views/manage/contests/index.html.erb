@@ -1,0 +1,14 @@
+<% @contests.each do |contest| %>
+  <p class="<%= contest.published? ? 'published' : 'unpublished' %><%= contest.current? ? ' current' : '' %>">
+    <%= contest.year %>
+  </p>
+  <p class="<%= contest.during_voting? ? 'active' : 'archive' %>">
+    Голосование с <%= l(contest.voting_started_on) %> по <%= l(contest.voting_finished_on) %>
+  </p>
+  <%= link_to t(:edit), edit_manage_contest_path(contest) %>
+  <%= link_to "Сделать текущим", set_current_manage_contest_path(contest), :method => :put unless contest.current? %>
+  <%= link_to "Опубликовать", publish_manage_contest_path(contest), :method => :put unless contest.published? %>
+  <%= link_to "Снять с публикации", publish_manage_contest_path(contest), :method => :put if contest.published? %>
+<% end %>
+
+<%= link_to t(:new), new_manage_contest_path %>

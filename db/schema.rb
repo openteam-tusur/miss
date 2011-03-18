@@ -10,11 +10,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110318041104) do
+ActiveRecord::Schema.define(:version => 20110318045932) do
 
   create_table "contests", :force => true do |t|
     t.integer  "year"
-    t.boolean  "publish"
+    t.boolean  "published"
     t.boolean  "current"
     t.date     "voting_started_on"
     t.date     "voting_finished_on"

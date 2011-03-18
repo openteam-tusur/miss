@@ -1,0 +1,23 @@
+ru:
+  new: Добавить
+  cancel: Отмена
+  edit: Изменить
+
+
+  activerecord:
+    attributes:
+      contest:
+        voting_started_on: Начало голосования
+        voting_finished_on: Окончания голосования
+        year: Год
+        sponsors: Спонсоры
+
+
+    models:
+      contest: конкурс
+
+  formtastic:
+    actions:
+      create: "Создать %{model}"
+      update: "Сохранить %{model}"
+

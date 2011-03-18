@@ -1,4 +1,12 @@
 MissTusur::Application.routes.draw do
+
+  namespace :manage do
+    resources :contests do
+      put :set_current, :on => :member
+      put :publish, :on => :member
+    end
+    root :to => "contests#index"
+  end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
