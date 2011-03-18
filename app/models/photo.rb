@@ -7,7 +7,7 @@ class Photo < ActiveRecord::Base
                     :path => ':rails_root/public/photos/:contest_year/:member_slug/:id/:style.:extension',
                     :styles => {
                       :large => {
-                        :geometry => "600",
+                        :geometry => "400",
                         :processors => [:thumbnail_with_dimensions],
                         :style_name => :large
                       },

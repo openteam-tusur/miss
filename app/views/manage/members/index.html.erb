@@ -1,9 +1,23 @@
-<% @members.each do |member| %>
-  <p>
-    <%= link_to member.name, manage_contest_member_path(@contest, member) %>
-  </p>
+<p>
+  <%= link_to t(:new), new_manage_contest_member_path(@contest), :class => "button" %>
+  <%= link_to "Сортировка участниц", sorted_manage_contest_members_path(@contest), :class => "button" %>
+</p>
+
+<div class="members_list">
+<% @members.each_slice(2) do |members| %>
+  <div class="line">
+  <% members.each do |member| %>
+    <div class="member <%= cycle('odd', 'even') %>">
+      <div class="photo">
+        <%= link_to image_tag(member.main_photo.image.url(:small)), manage_contest_member_path(@contest, member) %>
+      </div>
+      <div class="description">
+        <p><strong><%= link_to member.name, manage_contest_member_path(@contest, member) %></strong></p>
+        <%= simple_format(member.annotation).gilensize %>
+      </div>
+    </div>
+  <% end %>
+  </div>
 <% end %>
+</div>
 
-<%= link_to t(:new), new_manage_contest_member_path(@contest) %>
-
-<%= link_to "Сортировка участниц", sorted_manage_contest_members_path(@contest) %>

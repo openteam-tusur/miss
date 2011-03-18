@@ -9,12 +9,18 @@ ru:
   save: Сохранить
 
   title:
+    welcome:
+      index: Добрый день, уважаемые коллеги!
     manage/contests:
       index: Список конкурсов
       new: Добавление конкурса
       edit: Изменение конкурса
-    members:
-      index: Участницы конкурса
+    manage/members:
+      index: Список участниц конкурса
+      new: Добавление участницы конкурса
+      edit: Редактирование участницы конкурса
+      show: Участинца
+      sorted: Сортировка участниц
 
   activerecord:
     attributes:
@@ -34,7 +40,7 @@ ru:
 
     models:
       contest: конкурс
-      member: участница
+      member: участницу
 
   formtastic:
     required: Обязательно для заполнения

@@ -7,6 +7,9 @@
       </li>
     <% end %>
   </ul>
-  <%= submit_tag t(:save), :class => "button" %>
-  <%= link_to t(:cancel), manage_contest_members_path(@contest), :class => "button" %>
+  <p>
+    <%= submit_tag t(:save), :class => "button" %>
+    <%= link_to t(:cancel), manage_contest_members_path(@contest), :class => "button" %>
+  </p>
 <% end %>
+

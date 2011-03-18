@@ -1,14 +1,17 @@
 <% semantic_form_for [:manage, @contest, @member] do |form| %>
   <%= form.inputs do %>
+    <%= form.input :name, :input_html => { :class => "focus_first" } %>
     <%= form.input :slug %>
-    <%= form.input :name %>
     <%= form.input :annotation %>
     <%= form.input :content %>
     <%= form.input :nomination %>
   <% end %>
   <%= form.buttons do %>
-    <%= form.commit_button %>
-    <%= link_to t(:cancel), smart_resource_url %>
-    <%= link_to t(:delete), [:manage, @contest, @member], :method => :delete, :confirm => "Вы уверены, что хотите удалить участницу конкурса?" unless @member.new_record? %>
+    <%= form.commit_button :button_html => { :class => "button" } %>
+    <li><%= link_to t(:cancel), smart_resource_url, :class => "button light" %></li>
+    <li><%= link_to t(:delete), [:manage, @contest, @member], :method => :delete,
+                    :confirm => "Вы уверены, что хотите удалить участницу конкурса?",
+                    :class => "button light" unless @member.new_record? %></li>
   <% end %>
 <% end %>
+

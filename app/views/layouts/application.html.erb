@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru">
 <head>
-  <title><%= compose_page_title %></title>
+  <title><%= show_title? ? yield(:title) : title_locale %> | <%= t(:application) %><%= " #{@contest.year}" if @contest %></title>
   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
   <%= csrf_meta_tag %>
   <meta name="keywords" content="Мисс ТУСУР, интернет-голосование конкурса красоты, Томский государственный университет систем управления и радиоэлектроники, конкурс красоты" />

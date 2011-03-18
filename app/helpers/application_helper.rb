@@ -20,9 +20,5 @@ module ApplicationHelper
     @show_title
   end
 
-  def compose_page_title
-    raw "#{show_title? ? yield(:title) : title_locale} | #{t('application')} #{@contest.year if @contest}"
-  end
-
 end
 

@@ -1,4 +1,4 @@
-<p class="floatr"><%= link_to t(:new), new_manage_contest_path, :class => "button" %></p>
+<p><%= link_to t(:new), new_manage_contest_path, :class => "button" %></p>
 
 <% @contests.each do |contest| %>
   <div class="contest_item<%= contest.current? ? ' current' : '' %>">

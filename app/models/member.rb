@@ -16,6 +16,14 @@ class Member < ActiveRecord::Base
       photos.find(photo_id).update_attribute(:position, index+1)
     end
   end
+
+  def main_photo
+    photos.first
+  end
+
+  def other_photos
+    photos[1..photos.size-1]
+  end
 end
 
 
