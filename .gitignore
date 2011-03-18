@@ -3,6 +3,7 @@ db/*.sqlite3
 log/*.log
 tmp/
 bin/
+.rake_tasks~
 
 public/stylesheets/*.css
 public/photos/

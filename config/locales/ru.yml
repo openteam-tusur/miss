@@ -21,6 +21,9 @@ ru:
       edit: Редактирование участницы конкурса
       show: Участинца
       sorted: Сортировка участниц
+      sort_photos: Сортировка фотографий
+    members:
+      index: Участницы конкурса
 
   activerecord:
     attributes:

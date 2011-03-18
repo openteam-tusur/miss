@@ -1,20 +1,24 @@
 <% title @member.name %>
 
-<%= link_to 'Все участницы', manage_contest_members_path(@contest) %>
-<%= @member.name %>
-<%= link_to t(:edit), edit_manage_contest_member_path(@contest, @member) %>
+<p>
+  <%= link_to 'Все участницы', manage_contest_members_path(@contest), :class => "button light" %>
+  <%= link_to t(:edit), edit_manage_contest_member_path(@contest, @member), :class => "button light" %>
+  <%= link_to "Сортировка фотографий", sort_photos_manage_contest_member_path(@contest, @member), :class => "button light" %>
+</p>
 
-
-<% @member.photos.each do |photo| %>
-  <%= photo.image.dimensions("small") %>
-  <%= link_to image_tag(photo.image.url(:small), :size => photo.image.dimensions("small"), :alt => @member.name), photo.image.url(:large) %>
-  <%= link_to t(:delete), [:manage, @contest, @member, photo], :method => :delete, :confirm => "Вы уверены что хотите удалить фотографию?" %>
-<% end %>
-
-<%= link_to "Сортировка фотографий", sort_photos_manage_contest_member_path(@contest, @member) %>
-
+<div class="member_photos">
+  <% @member.photos.each do |photo| %>
+    <div class="member_photo">
+      <p><%= link_to image_tag(photo.image.url(:small), :size => photo.image.dimensions("small"), :alt => @member.name), photo.image.url(:large) %></p>
+      <p><%= photo.image.dimensions("small") %></p>
+      <p><%= link_to t(:delete), [:manage, @contest, @member, photo], :method => :delete, :confirm => "Вы уверены что хотите удалить фотографию?" %></p>
+    </div>
+  <% end %>
+</div>
 <%= semantic_form_for @member.photos.new, :url => manage_contest_member_photos_path(@contest, @member), :html => {:multipart => true} do |form| %>
-  <%= form.input :image, :as => :file %>
+  <%= form.inputs do %>
+    <%= form.input :image, :as => :file %>
+  <% end %>
   <%= form.buttons do %>
     <%= form.commit_button "Добавить"%>
   <% end %>
