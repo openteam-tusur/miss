@@ -18,12 +18,20 @@
       margin-left: 3px
     .string,
     .password,
-    .numeric,
+    .numeric
+      label
+        display: block
+      input
+        +field_style
     .date
       label
         display: block
       input
         +field_style
+      img
+        +inline-block
+        cursor: pointer
+        margin: 0 0 2px 3px
     .text
       label
         display: block
