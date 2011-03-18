@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110318073700) do
+ActiveRecord::Schema.define(:version => 20110318090438) do
 
   create_table "contests", :force => true do |t|
     t.integer  "year"
@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(:version => 20110318073700) do
     t.string   "image_small_dimensions"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "position"
   end
 
 end

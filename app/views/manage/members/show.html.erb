@@ -9,6 +9,8 @@
   <%= link_to t(:delete), [:manage, @contest, @member, photo], :method => :delete, :confirm => "Вы уверены что хотите удалить фотографию?" %>
 <% end %>
 
+<%= link_to "Сортировка фотографий", sort_photos_manage_contest_member_path(@contest, @member) %>
+
 <%= semantic_form_for @member.photos.new, :url => manage_contest_member_photos_path(@contest, @member), :html => {:multipart => true} do |form| %>
   <%= form.input :image, :as => :file %>
   <%= form.buttons do %>

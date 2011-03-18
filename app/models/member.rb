@@ -10,6 +10,12 @@ class Member < ActiveRecord::Base
   def to_param
     slug
   end
+
+  def update_sort_photos(photo_ids)
+    photo_ids.each_with_index do |photo_id, index|
+      photos.find(photo_id).update_attribute(:position, index+1)
+    end
+  end
 end
 
 

@@ -32,7 +32,7 @@ class Photo < ActiveRecord::Base
 
   validates_uniqueness_of :image_fingerprint
 
-  default_scope order("id desc")
+  default_scope order("position, id")
 
 
 end

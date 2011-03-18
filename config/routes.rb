@@ -11,7 +11,12 @@ MissTusur::Application.routes.draw do
           get :sorted
           put :update_sorted
         end
-        resources :photos, :only => [:create, :destroy]
+        member do
+          get :sort_photos
+          put :update_sort_photos
+        end
+        resources :photos, :only => [:create, :destroy] do
+        end
       end
     end
     root :to => "contests#index"

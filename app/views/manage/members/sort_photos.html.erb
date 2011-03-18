@@ -1,0 +1,12 @@
+<%= form_tag update_sort_photos_manage_contest_member_path(@contest, @member), :method => :put do %>
+  <ul class="sortable">
+    <% @member.photos.each do |photo| %>
+      <li>
+          <%= image_tag(photo.image.url(:small), :size => photo.image.dimensions(:small), :alt => @member.name) %>
+          <%= hidden_field_tag "photos[]", photo.id %>
+      </li>
+    <% end %>
+  </ul>
+  <%= submit_tag t(:save), :class => "button" %>
+  <%= link_to t(:cancel), manage_contest_member_path(@contest, @member), :class => "button" %>
+<% end %>

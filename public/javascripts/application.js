@@ -13,7 +13,7 @@ $(function() {
 
   $(".sortable").sortable({
     axis: "y",
-    handle: "label",
+    handle: "label, img",
     cursor: "move"
   });
 
