@@ -6,6 +6,10 @@ group :development, :test do
   gem 'rspec-rails'
 end
 
+group :production do
+  gem "exception_notification_rails3", :require => "exception_notifier"
+end
+
 group :production, :development do
   gem "pg", :require => false
 end
