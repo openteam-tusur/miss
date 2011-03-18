@@ -9,7 +9,7 @@
   <% members.each do |member| %>
     <div class="member <%= cycle('odd', 'even') %>">
       <div class="photo">
-        <%= link_to image_tag(member.main_photo.image.url(:small)), manage_contest_member_path(@contest, member) %>
+        <%= link_to image_tag(member.main_photo.image.url(:small)), manage_contest_member_path(@contest, member) if member.main_photo %>
       </div>
       <div class="description">
         <p><strong><%= link_to member.name, manage_contest_member_path(@contest, member) %></strong></p>
