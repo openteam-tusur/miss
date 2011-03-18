@@ -1,8 +1,8 @@
-<% semantic_form_for [:manage, @contest] do |form| %>
+<%= semantic_form_for [:manage, @contest] do |form| %>
   <%= form.inputs do %>
     <%= form.input :year %>
-    <%= form.input :voting_started_on, :as => :date %>
-    <%= form.input :voting_finished_on, :as => :date %>
+    <%= form.date_input :voting_started_on %>
+    <%= form.date_input :voting_finished_on %>
     <%= form.input :sponsors %>
   <% end %>
   <%= form.buttons do %>
@@ -10,3 +10,4 @@
     <%= link_to t(:cancel), smart_resource_url %>
   <% end %>
 <% end %>
+
