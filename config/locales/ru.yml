@@ -8,6 +8,11 @@ ru:
   edit: Изменить
   save: Сохранить
 
+  title:
+    manage/contests:
+      index: Список конкурсов
+      new: Добавление конкурса
+      edit: Изменение конкурса
 
   activerecord:
     attributes:

@@ -1,3 +1,5 @@
+<p class="floatr"><%= link_to t(:new), new_manage_contest_path, :class => "button" %></p>
+
 <% @contests.each do |contest| %>
   <p class="<%= contest.published? ? 'published' : 'unpublished' %><%= contest.current? ? ' current' : '' %>">
     <%= link_to contest.year, manage_contest_members_path(contest) %>
@@ -11,4 +13,3 @@
   <%= link_to "Снять с публикации", publish_manage_contest_path(contest), :method => :put if contest.published? %>
 <% end %>
 
-<%= link_to t(:new), new_manage_contest_path %>

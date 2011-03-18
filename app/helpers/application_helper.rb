@@ -1,8 +1,14 @@
 module ApplicationHelper
 
   def title_locale
-    title(t("title.#{params[:controller]}.#{params[:action]}"), true)
-    t("title.#{params[:controller]}.#{params[:action]}")
+    action = case params[:action]
+      when "create" then "new"
+      when "update" then "edit"
+      when "destroy" then "delete"
+      else params[:action]
+    end
+    title(t("title.#{params[:controller]}.#{action}"), true)
+    t("title.#{params[:controller]}.#{action}")
   end
 
   def title(page_title, show_title = true)
@@ -12,6 +18,10 @@ module ApplicationHelper
 
   def show_title?
     @show_title
+  end
+
+  def compose_page_title
+    raw "#{show_title? ? yield(:title) : title_locale} | #{t('application')} #{@contest.year if @contest}"
   end
 
 end
