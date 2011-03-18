@@ -4,6 +4,8 @@ class Contest < ActiveRecord::Base
 
   default_scope :order => 'year desc'
 
+  has_many :members, :dependent => :destroy
+
   def self.current
     self.where(:current => true).first
   end
@@ -20,13 +22,14 @@ class Contest < ActiveRecord::Base
   end
 end
 
+
 # == Schema Information
 #
 # Table name: contests
 #
 #  id                 :integer         not null, primary key
 #  year               :integer
-#  publish            :boolean
+#  published          :boolean
 #  current            :boolean
 #  voting_started_on  :date
 #  voting_finished_on :date

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110318045932) do
+ActiveRecord::Schema.define(:version => 20110318053859) do
 
   create_table "contests", :force => true do |t|
     t.integer  "year"
@@ -19,6 +19,18 @@ ActiveRecord::Schema.define(:version => 20110318045932) do
     t.date     "voting_started_on"
     t.date     "voting_finished_on"
     t.text     "sponsors"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "members", :force => true do |t|
+    t.string   "slug"
+    t.string   "name"
+    t.text     "annotation"
+    t.text     "content"
+    t.string   "nomination"
+    t.integer  "priority"
+    t.integer  "contest_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

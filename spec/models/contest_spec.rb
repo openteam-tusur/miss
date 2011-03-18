@@ -39,13 +39,14 @@ describe Contest do
 
 end
 
+
 # == Schema Information
 #
 # Table name: contests
 #
 #  id                 :integer         not null, primary key
 #  year               :integer
-#  publish            :boolean
+#  published          :boolean
 #  current            :boolean
 #  voting_started_on  :date
 #  voting_finished_on :date
