@@ -21,18 +21,8 @@
 <body>
   <div id="content_wrapper">
     <div id="left_side">
-      <div class="contests">
-        <ul>
-          <li><a href="#">Мисс 2011</a></li>
-          <li><a href="#">Мисс 2010</a></li>
-          <li><a href="#">Мисс 2009</a></li>
-          <li><a href="#">Мисс 2008</a></li>
-          <li><a href="#">Мисс 2007</a></li>
-        </ul>
-      </div>
-      <div class="promoters">
-        тут будут спонсоры
-      </div>
+      <%= yield :contests %>
+      <%= yield :promoters %>
     </div>
     <div id="right_side">
       <div id="header">
