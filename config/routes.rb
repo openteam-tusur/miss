@@ -4,6 +4,7 @@ MissTusur::Application.routes.draw do
     resources :contests do
       put :set_current, :on => :member
       put :publish, :on => :member
+      resources :members
     end
     root :to => "contests#index"
   end

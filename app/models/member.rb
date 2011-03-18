@@ -1,5 +1,14 @@
 class Member < ActiveRecord::Base
+
+  validates_presence_of :slug, :name, :annotation, :content
+
   belongs_to :contest
+
+  default_scope order('position, slug')
+
+  def to_param
+    slug
+  end
 end
 
 # == Schema Information

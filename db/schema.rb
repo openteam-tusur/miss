@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110318053859) do
+ActiveRecord::Schema.define(:version => 20110318060915) do
 
   create_table "contests", :force => true do |t|
     t.integer  "year"
@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(:version => 20110318053859) do
     t.text     "annotation"
     t.text     "content"
     t.string   "nomination"
-    t.integer  "priority"
+    t.integer  "position"
     t.integer  "contest_id"
     t.datetime "created_at"
     t.datetime "updated_at"

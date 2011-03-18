@@ -1,6 +1,7 @@
 ru:
   new: Добавить
   cancel: Отмена
+  delete: Удалить
   edit: Изменить
 
 
@@ -11,10 +12,16 @@ ru:
         voting_finished_on: Окончания голосования
         year: Год
         sponsors: Спонсоры
+      member:
+        name: ФИО
+        annotation: Краткое описание
+        content: Остальная часть описания
+        nomination: Номинация
 
 
     models:
       contest: конкурс
+      member: участница
 
   formtastic:
     actions:

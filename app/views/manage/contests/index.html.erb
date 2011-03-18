@@ -1,6 +1,6 @@
 <% @contests.each do |contest| %>
   <p class="<%= contest.published? ? 'published' : 'unpublished' %><%= contest.current? ? ' current' : '' %>">
-    <%= contest.year %>
+    <%= link_to contest.year, manage_contest_members_path(contest) %>
   </p>
   <p class="<%= contest.during_voting? ? 'active' : 'archive' %>">
     Голосование с <%= l(contest.voting_started_on) %> по <%= l(contest.voting_finished_on) %>
