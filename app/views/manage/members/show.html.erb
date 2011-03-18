@@ -6,6 +6,9 @@
   <%= link_to "Сортировка фотографий", sort_photos_manage_contest_member_path(@contest, @member), :class => "button light" %>
 </p>
 
+<%= simple_format(@member.annotation).gilensize %>
+<%= simple_format(@member.content).gilensize %>
+
 <div class="member_photos">
   <% @member.photos.each do |photo| %>
     <div class="member_photo">
