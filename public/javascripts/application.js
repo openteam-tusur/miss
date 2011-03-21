@@ -18,6 +18,7 @@ $(function() {
   });
 
   $('.member .photo_link').colorbox({
+    opacity: "0.5",
     previous: "назад",
     next: "вперед",
     close: "закрыть",
