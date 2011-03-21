@@ -26,15 +26,30 @@
           font-size: 11px
           a
             font-size: 12px
-  .member_photos
+  .member
     +clearfix
-    margin-bottom: 15px
-    .member_photo
+    .left_side
       float: left
+      width: 237px
       margin-right: 15px
-      text-align: center
-      p
-        margin-bottom: 0
+      img
+        padding: 1px
+        border: 1px solid #ad0000
+    .right_side
+      float: left
+      width: 458px
+      .member_photos
+        +clearfix
+        margin-bottom: 15px
+        .member_photo
+          float: left
+          margin-right: 10px
+          text-align: center
+          p
+            margin-bottom: 0
+          img
+            padding: 1px
+            border: 1px solid #ad0000
   .sortable
     margin-bottom: 15px
     li

@@ -6,4 +6,11 @@ class Manage::PhotosController < Manage::ApplicationController
 
   actions :create, :destroy
 
+  def create
+    create! do |success, failure|
+      failure.html { redirect_to parent_url }
+    end
+  end
+
 end
+

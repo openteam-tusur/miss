@@ -1,29 +1,43 @@
 <% title @member.name %>
 
-<p>
+<p class="actions">
   <%= link_to 'Все участницы', manage_contest_members_path(@contest), :class => "button light" %>
   <%= link_to t(:edit), edit_manage_contest_member_path(@contest, @member), :class => "button light" %>
   <%= link_to "Сортировка фотографий", sort_photos_manage_contest_member_path(@contest, @member), :class => "button light" %>
 </p>
 
-<%= simple_format(@member.annotation).gilensize %>
-<%= simple_format(@member.content).gilensize %>
 
-<div class="member_photos">
-  <% @member.photos.each do |photo| %>
-    <div class="member_photo">
-      <p><%= link_to image_tag(photo.image.url(:small), :size => photo.image.dimensions("small"), :alt => @member.name), photo.image.url(:large) %></p>
-      <p><%= photo.image.dimensions("small") %></p>
-      <p><%= link_to t(:delete), [:manage, @contest, @member, photo], :method => :delete, :confirm => "Вы уверены что хотите удалить фотографию?" %></p>
+<div class="member">
+  <div class="left_side">
+    <p><%= link_to image_tag(@member.main_photo.image.url(:normal),
+                   :size => @member.main_photo.image.dimensions("normal"),
+                   :alt => @member.name),
+                   @member.main_photo.image.url(:large),
+                   :rel => @member.slug %>
+    </p>
+    <p>1 голос (заглушка)</p>
+    <p><a href="#" class="button">Голосовать</a></p>
+  </div>
+  <div class="right_side">
+    <%= simple_format(@member.annotation).gilensize %>
+    <%= simple_format(@member.content).gilensize %>
+    <div class="member_photos">
+      <% @member.other_photos.each do |photo| %>
+        <div class="member_photo">
+          <p><%= link_to image_tag(photo.image.url(:small), :size => photo.image.dimensions("small"), :alt => @member.name), photo.image.url(:large) %></p>
+          <p><%= photo.image.dimensions("small") %></p>
+          <p><%= link_to t(:delete), [:manage, @contest, @member, photo], :method => :delete, :confirm => "Вы уверены что хотите удалить фотографию?" %></p>
+        </div>
+      <% end %>
     </div>
-  <% end %>
+    <%= semantic_form_for @member.photos.new, :url => manage_contest_member_photos_path(@contest, @member), :html => {:multipart => true} do |form| %>
+      <%= form.inputs do %>
+        <%= form.input :image, :as => :file %>
+      <% end %>
+      <%= form.buttons do %>
+        <%= form.commit_button "Добавить", :button_html => { :class => "button" } %>
+      <% end %>
+    <% end %>
+  </div>
 </div>
-<%= semantic_form_for @member.photos.new, :url => manage_contest_member_photos_path(@contest, @member), :html => {:multipart => true} do |form| %>
-  <%= form.inputs do %>
-    <%= form.input :image, :as => :file %>
-  <% end %>
-  <%= form.buttons do %>
-    <%= form.commit_button "Добавить"%>
-  <% end %>
-<% end %>
 
