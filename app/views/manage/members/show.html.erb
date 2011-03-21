@@ -31,8 +31,8 @@
   <div class="right_side">
     <%= simple_format(@member.annotation).gilensize %>
     <%= simple_format(@member.content).gilensize %>
-    <div class="member_photos">
-      <% unless @member.other_photos.blank? %>
+    <% unless @member.other_photos.blank? %>
+      <div class="member_photos">
         <% @member.other_photos.each do |photo| %>
           <div class="member_photo">
             <p>
@@ -51,8 +51,8 @@
             </p>
           </div>
         <% end %>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
     <%= semantic_form_for @member.photos.new, :url => manage_contest_member_photos_path(@contest, @member), :html => {:multipart => true} do |form| %>
       <%= form.inputs do %>
         <%= form.input :image, :as => :file %>
