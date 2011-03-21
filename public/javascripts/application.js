@@ -93,15 +93,40 @@ $(function() {
         $("<div id='ajax_temporary'></div>").appendTo("body").html(data).hide();
         if (type == "list_voting") {
           $(form).closest(".members_list").html($("#ajax_temporary .members_list").html());
+          $("input", $(form).closest(".members_list")).removeAttr("disabled");
         };
         if (type == "single_voting") {
           $(form).closest(".member").html($("#ajax_temporary .member").html());
+          $("input", $(form)).removeAttr("disabled");
         };
         $("#ajax_temporary").remove();
+        $("<div id='flash' class='notice'><p>Ваш голос учтён.</p><p>Спасибо за Ваш выбор!</p></div>").prepend("body");
       }
     });
     return false;
   });
 
+});
+
+
+$(document).ajaxStart(function(e) {
+  if ($(e.target.activeElement).attr("id") == "teacher_training_teacher_name") return;
+  if (!$(".ajax-overlay").length) {
+    $("<div class='ajax-overlay'><div class='indicator'></div></div>").appendTo("body");
+  };
+  var indicator = $(".ajax-overlay .indicator");
+  var overlayWidth = $(window).width();
+  var overlayHeight = $(document).height();
+  $(".ajax-overlay").css("width", overlayWidth);
+  $(".ajax-overlay").css("height", overlayHeight);
+  var winWidth = $(window).width();
+  var winHeight = $(window).height();
+  $(indicator).css('top',  winHeight/2 - $(indicator).height()/2 + $(document).scrollTop());
+  $(indicator).css('left', winWidth/2 - $(indicator).width()/2);
+  $(".ajax-overlay").show();
+});
+
+$(document).ajaxStop(function() {
+  $(".ajax-overlay").remove();
 });
 
