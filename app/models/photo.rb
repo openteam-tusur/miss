@@ -1,4 +1,7 @@
+require "paperclip/thumbnail_with_dimensions"
+
 class Photo < ActiveRecord::Base
+
   belongs_to :member
   has_one :contest, :through => :member
 
