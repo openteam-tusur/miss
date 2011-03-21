@@ -1,4 +1,5 @@
 <p>
+  <%= link_to "Список конкурсов", manage_contests_path, :class => "button" %>
   <%= link_to t(:new), new_manage_contest_member_path(@contest), :class => "button" %>
   <%= link_to "Сортировка участниц", sorted_manage_contest_members_path(@contest), :class => "button" %>
 </p>

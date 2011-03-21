@@ -1,7 +1,7 @@
-<% content_for :javascripts do %>
+<%= content_for :javascripts do %>
 <% end %>
 
-<% content_for :contests do %>
+<%= content_for :contests do %>
   <div class="contests">
     <ul>
       <% Contest.published.each do |contest| %>
@@ -13,7 +13,7 @@
   </div>
 <% end %>
 
-<% content_for :promoters do %>
+<%= content_for :promoters do %>
   <div class="promoters">
   </div>
 <% end %>
