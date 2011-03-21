@@ -11,7 +11,7 @@
                     :rel => @member.slug,
                     :class => "photo_link" %>
       </p>
-      <div class ="voting">
+      <div class ="single_voting">
         <%= render :partial => "/votings/vote", :locals => {:member => @member} %>
       </div>
     <% else %>

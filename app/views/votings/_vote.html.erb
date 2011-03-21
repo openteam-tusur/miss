@@ -1,8 +1,8 @@
 <% if @contest.during_voting? %>
   <p><%= t(:votes, :count => member.votings.count) %></p>
   <% if Voting.can_vote?(request) %>
-    <%= form_tag voting_path(@contest, member), :method => :post do %>
-      <%= submit_tag "Голосовать", :class => "button red" %>
+    <%= form_tag voting_path(@contest, member), :method => :post, :class => "voting_form" do %>
+      <p><%= submit_tag "Голосовать", :class => "button red" %></p>
     <% end %>
   <% else %>
     <p>С вашего компьютера сегодня уже голосовали</p>

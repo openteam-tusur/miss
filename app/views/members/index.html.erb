@@ -5,7 +5,7 @@
     <div class="member <%= cycle('odd', 'even') %>">
       <div class="photo">
         <p><%= link_to image_tag(member.main_photo.image.url(:small)), member_path(@contest, member) if member.main_photo %></p>
-        <div class ="voting">
+        <div class ="list_voting">
           <%= render :partial => "/votings/vote", :locals => {:member => member} %>
         </div>
       </div>

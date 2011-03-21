@@ -42,7 +42,6 @@ function create_slug() {
         source = source.replace(new RegExp(elem[0], "g"), elem[1]);
       };
       $("#member_slug").val(source);
-      console.log($("#member_slug").val());
     });
   };
 };
@@ -75,6 +74,34 @@ $(function() {
   });
 
   create_slug();
+
+  $("form.voting_form").live("submit", function(event) {
+    var form = $(this);
+    var url = $(this).attr("action");
+    var type = $(this).closest("div").attr("class");
+    if (type == "list_voting") {
+      $("input", $(form).closest(".members_list")).attr("disabled", "disabled");
+    };
+    if (type == "single_voting") {
+      $("input", $(form)).attr("disabled", "disabled");
+    };
+    $.ajax({
+      type: "POST",
+      url: url,
+      data: { "type": type },
+      success: function(data) {
+        $("<div id='ajax_temporary'></div>").appendTo("body").html(data).hide();
+        if (type == "list_voting") {
+          $(form).closest(".members_list").html($("#ajax_temporary .members_list").html());
+        };
+        if (type == "single_voting") {
+          $(form).closest(".member").html($("#ajax_temporary .member").html());
+        };
+        $("#ajax_temporary").remove();
+      }
+    });
+    return false;
+  });
 
 });
 
