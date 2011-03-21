@@ -17,5 +17,12 @@ $(function() {
     cursor: "move"
   });
 
+  $('.member .photo_link').colorbox({
+    previous: "назад",
+    next: "вперед",
+    close: "закрыть",
+    current:	"{current} из {total}"
+  });
+
 });
 
