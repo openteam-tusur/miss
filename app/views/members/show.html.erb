@@ -1,6 +1,42 @@
 <% title @member.name %>
 
-<%= render :partial => "/votings/vote", :locals => {:member => @member} %>
-
-<%= link_to 'Другие участницы', contest_path(@contest) %>
+<div class="member">
+  <div class="left_side">
+    <% unless @member.main_photo.blank? %>
+      <p>
+        <%= link_to image_tag(@member.main_photo.image.url(:normal),
+                    :size => @member.main_photo.image.dimensions("normal"),
+                    :alt => @member.name),
+                    @member.main_photo.image.url(:large),
+                    :rel => @member.slug,
+                    :class => "photo_link" %>
+      </p>
+      <div class ="voting">
+        <%= render :partial => "/votings/vote", :locals => {:member => @member} %>
+      </div>
+    <% else %>
+      <%= image_tag "miss_blank.jpg", :width => "233", :height => "350" %>
+    <% end %>
+  </div>
+  <div class="right_side">
+    <%= simple_format(@member.annotation).gilensize %>
+    <%= simple_format(@member.content).gilensize %>
+    <div class="member_photos">
+      <% unless @member.other_photos.blank? %>
+        <% @member.other_photos.each do |photo| %>
+          <div class="member_photo">
+            <p>
+              <%= link_to image_tag(photo.image.url(:small),
+                          :size => photo.image.dimensions("small"),
+                          :alt => @member.name),
+                          photo.image.url(:large),
+                          :rel => @member.slug,
+                          :class => "photo_link" %>
+            </p>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
 
