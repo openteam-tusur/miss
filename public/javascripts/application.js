@@ -46,6 +46,18 @@ function create_slug() {
   };
 };
 
+function flash_notice() {
+  $("#flash").stop(true, true);
+  setTimeout("$('#flash').slideUp(function() {" +
+    "$(this).remove();" +
+  "})", 5000);
+  $("#flash").click(function() {
+    $(this).slideUp(function() {
+      $(this).remove();
+    });
+  });
+};
+
 $(function() {
 
   $(".focus_first:first").focus();
@@ -100,7 +112,9 @@ $(function() {
           $("input", $(form)).removeAttr("disabled");
         };
         $("#ajax_temporary").remove();
-        $("<div id='flash' class='notice'><p>Ваш голос учтён.</p><p>Спасибо за Ваш выбор!</p></div>").prepend("body");
+        $("<div id='flash' class='notice'><p>Ваш голос учтён.</p><p>Спасибо за Ваш выбор!</p></div>").prependTo("body");
+        $("#flash").css('left', $(window).width()/2 - $("#flash").width()/2);
+        flash_notice();
       }
     });
     return false;

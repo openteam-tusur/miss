@@ -5,7 +5,7 @@
       <p><%= submit_tag "Голосовать", :class => "button red" %></p>
     <% end %>
   <% else %>
-    <p>С вашего компьютера сегодня уже голосовали</p>
+    <p><%= submit_tag "Голосовать", :class => "button red", :disabled => "disabled" %></p>
   <% end %>
 <% end %>
 
