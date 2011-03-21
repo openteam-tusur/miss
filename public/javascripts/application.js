@@ -50,7 +50,7 @@ function flash_notice() {
   $("#flash").stop(true, true);
   setTimeout("$('#flash').slideUp(function() {" +
     "$(this).remove();" +
-  "})", 5000);
+  "})", 10000);
   $("#flash").click(function() {
     $(this).slideUp(function() {
       $(this).remove();
