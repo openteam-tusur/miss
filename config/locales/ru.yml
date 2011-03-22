@@ -32,6 +32,7 @@ ru:
         voting_finished_on: Окончания голосования
         year: Год
         sponsors: Спонсоры
+        additional: Текст перед списком участниц
       photo:
         image: Фотография
       member:

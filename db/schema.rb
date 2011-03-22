@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110318101832) do
+ActiveRecord::Schema.define(:version => 20110322103249) do
 
   create_table "contests", :force => true do |t|
     t.integer  "year"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(:version => 20110318101832) do
     t.text     "sponsors"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "additional"
   end
 
   create_table "members", :force => true do |t|

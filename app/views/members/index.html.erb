@@ -1,3 +1,5 @@
+<%= raw(@contest.additional) if @contest.additional %>
+
 <div class="members_list">
 <% @members.each_slice(2) do |row_members| %>
   <div class="line">
