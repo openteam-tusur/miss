@@ -14,7 +14,9 @@
 <% end %>
 
 <%= content_for :promoters do %>
-  <!-- в менеджерском виде спонсоры нафиг не нужны -->
+  <% unless @contest.blank? %>
+    <%= content_tag :div, raw(@contest.sponsors), :class => "promoters" unless @contest.sponsors.blank? %>
+  <% end %>
 <% end %>
 
 <%= render :file => 'layouts/application' %>
