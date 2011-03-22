@@ -18,12 +18,14 @@
                     :rel => @member.slug,
                     :class => "photo_link" %>
       </p>
-      <p><%= @member.main_photo.image.dimensions("large") %></p>
-      <p>
-        <%= link_to t(:delete), [:manage, @contest, @member, @member.main_photo],
-                    :method => :delete,
-                    :confirm => "Вы уверены что хотите удалить фотографию?" %>
-      </p>
+      <div class ="single_voting">
+        <p><%= @member.main_photo.image.dimensions("large") %></p>
+        <p>
+          <%= link_to t(:delete), [:manage, @contest, @member, @member.main_photo],
+                      :method => :delete,
+                      :confirm => "Вы уверены что хотите удалить фотографию?" %>
+        </p>
+      </div>
     <% else %>
       <%= image_tag "miss_blank.jpg", :width => "233", :height => "350" %>
     <% end %>
