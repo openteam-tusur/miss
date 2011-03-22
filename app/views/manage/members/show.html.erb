@@ -19,7 +19,7 @@
                     :class => "photo_link" %>
       </p>
       <div class ="single_voting">
-        <p><%= @member.main_photo.image.dimensions("large") %></p>
+        <p><%= @member.main_photo.image.dimensions("normal") %></p>
         <p>
           <%= link_to t(:delete), [:manage, @contest, @member, @member.main_photo],
                       :method => :delete,
