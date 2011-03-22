@@ -11,6 +11,7 @@
       </div>
       <div class="description">
         <p><strong><%= link_to member.name, member_path(@contest, member) %></strong></p>
+        <%= content_tag :p, member.nomination, :class => "nomination" unless member.nomination.blank? %>
         <%= simple_format(member.annotation).gilensize %>
       </div>
     </div>
