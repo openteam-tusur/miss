@@ -36,7 +36,7 @@ function create_slug() {
   ];
   if ($("#member_slug").val() == "") {
     $('#member_name').blur(function() {
-      var source = $(this).val().toLowerCase().replace(" ", "-");
+      var source = $(this).val().toLowerCase().replace(new RegExp(" ", "g"), "-");
       for (var i=0; i < ru_en.length; i++) {
         var elem = ru_en[i];
         source = source.replace(new RegExp(elem[0], "g"), elem[1]);
