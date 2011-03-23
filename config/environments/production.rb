@@ -49,7 +49,7 @@ MissTusur::Application.configure do
 
   config.middleware.use ExceptionNotifier,
     :email_prefix => "[Miss TUSUR error] ",
-    :sender_address => %{"notifier" <notifier@openteam.ru>},
-    :exception_recipients => %w{mail@openteam.ru}
+    :sender_address => %{"notifier" <notifier@miss.tusur.ru>},
+    :exception_recipients => %w{developers@openteam.ru}
 end
 
