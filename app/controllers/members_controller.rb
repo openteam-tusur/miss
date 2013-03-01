@@ -7,6 +7,7 @@ class MembersController < ApplicationController
   end
 
   def show
+    redirect_to root_path and return if @contest.blank?
     @member = @contest.members.find_by_slug(params[:member_id])
     redirect_to root_path and return if @member.blank?
   end

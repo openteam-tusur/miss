@@ -1,5 +1,4 @@
 <%= raw(@contest.additional) if @contest.additional %>
-
 <div class="members_list">
 <% @members.each_slice(2) do |row_members| %>
   <div class="line">
@@ -14,7 +13,7 @@
       <div class="description">
         <p><strong><%= link_to member.name, member_path(@contest, member) %></strong></p>
         <%= content_tag :p, member.nomination, :class => "nomination" unless member.nomination.blank? %>
-        <%= simple_format(member.annotation).gilensize %>
+        <%= simple_format(member.annotation).gilensize.html_safe %>
       </div>
     </div>
   <% end %>

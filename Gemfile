@@ -1,6 +1,4 @@
-source :rubygems
-
-gem 'rails'
+source 'http://rubygems.org'
 
 group :development, :test do
   gem 'rspec-rails'
@@ -16,38 +14,30 @@ group :production, :development do
 end
 
 group :test do
-  gem 'sqlite3-ruby', :require => 'sqlite3'
   gem 'capybara'
-  gem 'rr'
+  gem 'factory_girl_rails'
   gem 'faker'
   gem 'launchy'
-  gem 'factory_girl_rails'
+  gem 'rr'
+  gem 'sqlite3-ruby', :require => 'sqlite3'
 end
 
 group :development do
+  gem 'annotate'
+  gem 'brakeman'
   gem 'rails3-generators'
   gem 'spork', :require => false
-  gem 'annotate'
 end
 
-# compatibility with jQuery
-gem 'jquery-rails'
-
-# GUI
-gem 'compass'
-gem 'fancy-buttons'
-gem 'formtastic'
-
-# attachment
-gem 'paperclip'
-
-# inherited_resources
-gem 'inherited_resources', :git => 'git://github.com/josevalim/inherited_resources'
-
-# localization
-gem 'russian', :git => 'git://github.com/tacid/russian'
-gem 'gilenson'
-
-# attachment
-gem 'paperclip'
-
+group :default do
+  gem 'compass'
+  gem 'fancy-buttons'
+  gem 'formtastic'
+  gem 'gilenson'
+  gem 'inherited_resources', :git => 'git://github.com/josevalim/inherited_resources'
+  gem 'jquery-rails'
+  gem 'paperclip'
+  gem 'paperclip'
+  gem 'rails', '~> 3.0.6'
+  gem 'russian', :git => 'git://github.com/tacid/russian'
+end
