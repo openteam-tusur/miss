@@ -68,8 +68,6 @@ GEM
       railties (>= 3.0.0)
     faker (0.9.5)
       i18n (~> 0.4)
-    fancy-buttons (1.0.6)
-      compass (= 0.10.6)
     fastercsv (1.5.5)
     formtastic (1.2.3)
       actionpack (>= 2.3.7)
@@ -172,7 +170,6 @@ DEPENDENCIES
   exception_notification_rails3
   factory_girl_rails
   faker
-  fancy-buttons
   formtastic
   gilenson
   inherited_resources!

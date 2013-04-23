@@ -31,7 +31,6 @@ end
 
 group :default do
   gem 'compass'
-  gem 'fancy-buttons'
   gem 'formtastic'
   gem 'gilenson'
   gem 'inherited_resources', :git => 'git://github.com/josevalim/inherited_resources'
