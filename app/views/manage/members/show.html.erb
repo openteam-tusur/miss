@@ -32,8 +32,8 @@
   </div>
   <div class="right_side">
     <%= content_tag :h2, @member.nomination unless @member.nomination.blank? %>
-    <%= simple_format(@member.annotation).gilensize %>
-    <%= simple_format(@member.content).gilensize %>
+    <%= simple_format(@member.annotation).gilensize.html_safe %>
+    <%= simple_format(@member.content).gilensize.html_safe %>
     <% unless @member.other_photos.blank? %>
       <div class="member_photos">
         <% @member.other_photos.each do |photo| %>
