@@ -14,7 +14,7 @@ group :production, :development do
 end
 
 group :test do
-  gem 'capybara'
+  #gem 'capybara'
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'launchy'
