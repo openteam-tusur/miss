@@ -84,14 +84,14 @@ class Formtastic::SemanticFormBuilder
   def enum_input(method, options = {})
     value = @object.send(method)
     additional_params = {:as => :select, :collection => @object.class.values_for_select_tag(method)}
-    self.input(method, options.merge(additional_params)).gsub(/class="select/, 'class="enum')
+    self.input(method, options.merge(additional_params)).gsub(/class="select/, 'class="enum').html_safe
   end
 
   def date_input(method, options = {})
     value = @object.send(method)
     additional_params = {:as => :string}
     additional_params.merge!(:input_html => { :value => I18n.localize(value)}) if value.is_a?(Date)
-    self.input(method, options.merge(additional_params)).gsub(/class="string/, 'class="date')
+    self.input(method, options.merge(additional_params)).gsub(/class="string/, 'class="date').html_safe
   end
 
 end
