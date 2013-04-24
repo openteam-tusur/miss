@@ -2,7 +2,7 @@ class MembersController < ApplicationController
   before_filter :find_contest
 
   def index
-    redirect_to root_path and return if @contest.blank?
+    redirect_to root_path and return if @contest.blank? || !@contest.published?
     @members = @contest.members
   end
 
