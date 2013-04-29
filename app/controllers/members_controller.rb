@@ -13,6 +13,7 @@ class MembersController < ApplicationController
   end
 
   def voting
+    redirect_to :back and return unless @contest.during_voting?
     @member = @contest.members.find_by_slug(params[:member_id])
     Voting.vote(@member, request)
     if params[:type].eql?("list_voting")

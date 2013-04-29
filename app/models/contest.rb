@@ -22,8 +22,8 @@ class Contest < ActiveRecord::Base
   end
 
   def during_voting?
-    return false if voting_started_on.to_time > Time.now || voting_finished_on.to_time < Time.now
-    true
+    return true if (Time.now.in_time_zone('UTC') + 7.hours).between? self.voting_started_on, self.voting_finished_on
+    false
   end
 
   def update_sorted_members(members_ids)

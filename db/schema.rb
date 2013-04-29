@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -10,14 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110322103249) do
+ActiveRecord::Schema.define(:version => 20130429045221) do
 
   create_table "contests", :force => true do |t|
     t.integer  "year"
     t.boolean  "published"
     t.boolean  "current"
-    t.date     "voting_started_on"
-    t.date     "voting_finished_on"
+    t.datetime "voting_started_on"
+    t.datetime "voting_finished_on"
     t.text     "sponsors"
     t.datetime "created_at"
     t.datetime "updated_at"

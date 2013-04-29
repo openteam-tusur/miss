@@ -90,7 +90,7 @@ class Formtastic::SemanticFormBuilder
   def date_input(method, options = {})
     value = @object.send(method)
     additional_params = {:as => :string}
-    additional_params.merge!(:input_html => { :value => I18n.localize(value)}) if value.is_a?(Date)
+    additional_params.merge!(:input_html => { :value => I18n.l(value, :format => '%d.%m.%Y %H:%M') })
     self.input(method, options.merge(additional_params)).gsub(/class="string/, 'class="date').html_safe
   end
 
