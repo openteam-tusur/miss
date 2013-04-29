@@ -14,7 +14,6 @@ group :production, :development do
 end
 
 group :test do
-  #gem 'capybara'
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'launchy'
@@ -31,6 +30,7 @@ end
 
 group :default do
   gem 'compass'
+  gem 'configliere'
   gem 'formtastic'
   gem 'gilenson'
   gem 'inherited_resources', :git => 'git://github.com/josevalim/inherited_resources'

@@ -8,4 +8,4 @@ bin/
 public/stylesheets/*.css
 public/photos/
 config/database.yml
-
+config/settings.yml
