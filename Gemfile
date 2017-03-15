@@ -1,16 +1,28 @@
-source 'http://rubygems.org'
+source 'https://rubygems.org'
 
-group :development, :test do
-  gem 'rspec-rails'
+group :default do
+  gem 'awesome_print'
+  gem 'compass'
+  gem 'configliere'
+  gem 'formtastic'
+  gem 'gilenson'
+  gem 'inherited_resources'
+  gem 'jquery-rails'
+  gem 'paperclip'
+  gem 'pg'
+  gem 'rails', '~> 3.0.6'
+  gem 'russian'
+end
+
+group :development do
+  gem 'annotate'
+  gem 'brakeman'
+  gem 'capistrano-db-tasks', '0.4', require: false
+  gem 'openteam-capistrano'
 end
 
 group :production do
-  gem 'exception_notification_rails3', :require => 'exception_notifier'
-  gem 'unicorn', :require => false
-end
-
-group :production, :development do
-  gem 'pg', :require => false
+  gem 'unicorn'
 end
 
 group :test do
@@ -18,25 +30,7 @@ group :test do
   gem 'faker'
   gem 'launchy'
   gem 'rr'
-  gem 'sqlite3-ruby', :require => 'sqlite3'
-end
-
-group :development do
-  gem 'annotate'
-  gem 'brakeman'
-  gem 'rails3-generators'
-  gem 'spork', :require => false
-end
-
-group :default do
-  gem 'compass'
-  gem 'configliere'
-  gem 'formtastic'
-  gem 'gilenson'
-  gem 'inherited_resources', :git => 'git://github.com/josevalim/inherited_resources'
-  gem 'jquery-rails'
-  gem 'paperclip'
-  gem 'paperclip'
-  gem 'rails', '~> 3.0.6'
-  gem 'russian', :git => 'git://github.com/tacid/russian'
+  gem 'rspec-rails'
+  gem 'spork'
+  gem 'sqlite3'
 end

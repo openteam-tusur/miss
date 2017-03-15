@@ -8,4 +8,5 @@ bin/
 public/stylesheets/*.css
 public/photos/
 config/database.yml
+config/deploy.yml
 config/settings.yml
