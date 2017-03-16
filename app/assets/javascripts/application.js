@@ -1,3 +1,9 @@
+/*
+ * = require jquery
+ * = require jquery_ujs
+ * = require_self
+ */
+
 function create_slug() {
   var ru_en = [
     ["а", "a"],
@@ -62,28 +68,28 @@ $(function() {
 
   $(".focus_first:first").focus();
 
-  $("form.formtastic li.date input").datepicker({
-    changeMonth: true,
-    changeYear: true
-  });
+  //$("form.formtastic li.date input").datepicker({
+    //changeMonth: true,
+    //changeYear: true
+  //});
 
-  $(".sortable").sortable({
-    axis: "y",
-    handle: "label, img",
-    cursor: "move"
-  });
+  //$(".sortable").sortable({
+    //axis: "y",
+    //handle: "label, img",
+    //cursor: "move"
+  //});
 
-  $('.member .photo_link').colorbox({
-    opacity: "0.5",
-    previous: "назад",
-    next: "вперед",
-    close: "закрыть",
-    current:	"{current} из {total}"
-  });
+  //$('.member .photo_link').colorbox({
+    //opacity: "0.5",
+    //previous: "назад",
+    //next: "вперед",
+    //close: "закрыть",
+    //current:	"{current} из {total}"
+  //});
 
   create_slug();
 
-  $("form.voting_form").live("submit", function(event) {
+  $(document).on('submit', "form.voting_form", function(event) {
     var form = $(this);
     var url = $(this).attr("action");
     var type = $(this).closest("div").attr("class");

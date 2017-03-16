@@ -1,7 +1,7 @@
 /* Welcome to Compass. Use this file to alert IE use users.
  * Import this file using the following HTML or equivalent:
  * <!--[if lte IE 7]>
- *   <%= stylesheet_link_tag "compiled/ie6stop.css", :media => "screen, projection" %>
+ *   <%= stylesheet_link_tag 'compiled/ie6stop.css', :media => 'screen, projection' %>
  *   <%= javascript_include_tag 'ie6stop.js' %>
  * <![endif]--> */
 
@@ -39,7 +39,7 @@ body
     height: 16px
     text-indent: -99px
     overflow: hidden
-    background: url("../images/ie6stop/cornerx.png") no-repeat
+    background: image-url('ie6stop/cornerx.png') no-repeat
     margin: 5px 5px 0 0
   .browsers
     width: 900px
@@ -49,7 +49,7 @@ body
       float: left
       width: 520px
       font-family: Arial, Verdana, sans-serif
-      background: url("../images/ie6stop/warning.png") no-repeat left
+      background: image-url('ie6stop/warning.png') no-repeat left
       padding-left: 70px
       margin: 10px 10px 0 0
     .firefox, .safari, .chrome, .ie8, .opera
@@ -61,15 +61,15 @@ body
       overflow: hidden
       margin-right: 10px
   .firefox
-    background: url("../images/ie6stop/firefox.png")
+    background: image-url('ie6stop/firefox.png')
   .safari
-    background: url("../images/ie6stop/safari.png")
+    background: image-url('ie6stop/safari.png')
   .chrome
-    background: url("../images/ie6stop/chrome.png")
+    background: image-url('ie6stop/chrome.png')
   .ie8
-    background: url("../images/ie6stop/ie8.png")
+    background: image-url('ie6stop/ie8.png')
   .opera
-    background: url("../images/ie6stop/opera.png") no-repeat
+    background: image-url('ie6stop/opera.png') no-repeat
     height: 49px
   .browsers div
     font-family: Arial, Verdana, sans-serif

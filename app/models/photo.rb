@@ -3,40 +3,39 @@ require "paperclip/thumbnail_with_dimensions"
 class Photo < ActiveRecord::Base
 
   belongs_to :member
-  has_one :contest, :through => :member
+  has_one :contest, through: :member
 
   has_attached_file :image,
                     :url => '/photos/:contest_year/:member_slug/:id/:style.:extension',
                     :path => ':rails_root/public/photos/:contest_year/:member_slug/:id/:style.:extension',
                     :styles => {
                       :large => {
-                        :geometry => "525x525",
+                        :geometry => '525x525',
                         :processors => [:thumbnail_with_dimensions],
                         :style_name => :large
                       },
                       :normal => {
-                        :geometry => "233x",
+                        :geometry => '233x',
                         :processors => [:thumbnail_with_dimensions],
                         :style_name => :normal
                       },
                       :small => {
-                        :geometry => "100x",
+                        :geometry => '100x',
                         :processors => [:thumbnail_with_dimensions],
                         :style_name => :small
                       }
                     },
                     :convert_options => {
-                      :large => ["-quality", "99"],
-                      :normal => ["-quality", "99"],
-                      :small => ["-quality", "99"]
+                      :large => ['-quality', '99'],
+                      :normal => ['-quality', '99'],
+                      :small => ['-quality', '99']
                     }
 
   validates_attachment_presence :image
 
   validates_uniqueness_of :image_fingerprint
 
-  default_scope order("position, id")
-
+  default_scope { order('position, id') }
 
 end
 

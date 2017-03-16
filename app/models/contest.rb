@@ -1,9 +1,10 @@
 class Contest < ActiveRecord::Base
+
   validates_presence_of :year, :voting_started_on, :voting_finished_on
   validates_uniqueness_of :year
 
-  default_scope :order => 'year desc'
-  scope         :published,  where(:published => true)
+  default_scope { order(year: :desc) }
+  scope         :published, -> { where(published: true) }
 
   has_many :members, :dependent => :destroy
 
@@ -12,7 +13,7 @@ class Contest < ActiveRecord::Base
   end
 
   def self.set_current(contest)
-    self.update_all(:current => false)
+    self.update_all(current: false)
     contest.current = true
     contest.save
   end
@@ -22,13 +23,14 @@ class Contest < ActiveRecord::Base
   end
 
   def during_voting?
-    return true if (Time.now.in_time_zone('UTC') + 7.hours).between? self.voting_started_on, self.voting_finished_on
+    return true if Time.zone.now.between?(voting_started_on, voting_finished_on)
+
     false
   end
 
   def update_sorted_members(members_ids)
     members_ids.each_with_index do |member_id, index|
-      members.find(member_id).update_attribute(:position, index+1)
+      members.find(member_id).update_attribute(:position, index + 1)
     end
   end
 

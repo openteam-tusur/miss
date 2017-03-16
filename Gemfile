@@ -1,18 +1,20 @@
 source 'https://rubygems.org'
 
-group :default do
-  gem 'awesome_print'
-  gem 'compass'
-  gem 'configliere'
-  gem 'formtastic'
-  gem 'gilenson'
-  gem 'inherited_resources'
-  gem 'jquery-rails'
-  gem 'paperclip'
-  gem 'pg'
-  gem 'rails', '~> 3.0.6'
-  gem 'russian'
-end
+gem 'awesome_print'
+gem 'coffee-rails', '~> 4.1.0'
+gem 'compass-rails'
+gem 'configliere'
+gem 'formtastic'
+gem 'gilenson'
+gem 'inherited_resources'
+gem 'jquery-rails'
+gem 'openteam-commons', '~> 0.3.3'
+gem 'paperclip'
+gem 'pg'
+gem 'rails', '~> 4.2.8'
+gem 'russian'
+gem 'sass-rails', '~> 5.0'
+gem 'uglifier', '>= 1.3.0'
 
 group :development do
   gem 'annotate'

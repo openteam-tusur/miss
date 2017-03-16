@@ -2,57 +2,52 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru">
 <head>
   <title><%= show_title? ? yield(:title) : title_locale %> | <%= t(:application) %><%= " #{@contest.year}" if @contest %></title>
-  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+  <meta http-equiv='Content-Type' content='text/html;charset=UTF-8' />
   <%= csrf_meta_tag %>
-  <meta name="keywords" content="Мисс ТУСУР, интернет-голосование конкурса красоты, Томский государственный университет систем управления и радиоэлектроники, конкурс красоты" />
-  <meta name="description" content="Интернет-голосование конкурса красоты Мисс ТУСУР (Томский государственный университет систем управления и радиоэлектроники)" />
+  <meta name='keywords' content='Мисс ТУСУР, интернет-голосование конкурса красоты, Томский государственный университет систем управления и радиоэлектроники, конкурс красоты' />
+  <meta name='description' content='Интернет-голосование конкурса красоты Мисс ТУСУР (Томский государственный университет систем управления и радиоэлектроники)' />
   <%= favicon_link_tag %>
-  <%= stylesheet_link_tag "screen.css", :media => "screen, projection" %>
-  <%= stylesheet_link_tag "print.css", :media => "print" %>
+  <%= stylesheet_link_tag 'application', media: 'screen, projection' %>
+  <%= stylesheet_link_tag 'print', media: 'print' %>
+  <%= javascript_include_tag 'application' %>
   <!--[if IE]>
-  <%= stylesheet_link_tag "ie.css", :media => "screen, projection" %>
+  <%= stylesheet_link_tag 'ie', media: 'screen, projection' %>
   <![endif]-->
-  <%= javascript_include_tag "jquery.min.js" %>
-  <%= javascript_include_tag "jquery.ui.datepicker.ru.js" %>
-  <%= javascript_include_tag "jquery.ui.min.js" %>
-  <%= javascript_include_tag "jquery.colorbox.min.js" %>
-  <%= javascript_include_tag "application.js" %>
-  <%= javascript_include_tag "rails.js" %>
   <!--[if lte IE 7]>
-  <%= stylesheet_link_tag "ie6stop.css", :media => "screen, projection" %>
-  <%= javascript_include_tag 'ie6stop.js' %>
+  <%= stylesheet_link_tag 'ie6stop', media: 'screen, projection' %>
+  <%= javascript_include_tag 'ie6stop' %>
   <![endif]-->
 </head>
 <body>
-  <div id="content_wrapper">
-    <div id="left_side">
+  <div id='content_wrapper'>
+    <div id='left_side'>
       <%= yield :contests %>
       <%= yield :promoters %>
     </div>
-    <div id="right_side">
-      <div id="header">
-        <div class="tusur">
-          <a href="http://www.tusur.ru/">Томский государственный университет систем управления и радиоэлектроники</a>
+    <div id='right_side'>
+      <div id='header'>
+        <div class='tusur'>
+          <a href='http://www.tusur.ru/'>Томский государственный университет систем управления и радиоэлектроники</a>
         </div>
-        <div class="miss">
-          <a href="/">Мисс ТУСУР <%= @contest.year if @contest %></a>
+        <div class='miss'>
+          <a href='/'>Мисс ТУСУР <%= @contest.year if @contest %></a>
         </div>
       </div>
-      <div id="content">
+      <div id='content'>
         <%= content_tag(:h1, yield(:title)) if show_title? %>
         <%= yield %>
       </div>
     </div>
   </div>
-  <div id="footer_wrapper">
-    <div id="footer">
-      <div class="copyright">
-        <p>&copy; <a href="http://studprof.tusur.ru/">Профсоюзная организация студентов ТУСУР</a>, 2007&ndash;<%= Date.today.year %></p>
+  <div id='footer_wrapper'>
+    <div id='footer'>
+      <div class='copyright'>
+        <p>&copy; 2007&ndash;<%= Date.today.year %>, <a href='http://studprof.tusur.ru/'>Профсоюзная организация студентов ТУСУР</a></p>
         <p><strong>Адрес:</strong> 634050, г.Томск, пр.Ленина, 40, каб. 238</p>
-        <p><strong>Тел.:</strong> (3822) 51-36-00 <strong>E-mail:</strong> <a href="mailto:studprof@tusur.ru">studprof@tusur.ru</a></p>
+        <p><strong>Тел.:</strong> (3822) 51-36-00 <strong>E-mail:</strong> <a href='mailto:studprof@tusur.ru'>studprof@tusur.ru</a></p>
       </div>
-      <div class="openteam">
-        <a href="http://openteam.ru/" title="OpenTeam. Сделано с любовью">OpenTeam. Сделано с любовью</a>
+      <div class='openteam'>
+        <a href='http://openteam.ru/' title='OpenTeam. Сделано с любовью'>OpenTeam. Сделано с любовью</a>
       </div>
     </div>
   </div>

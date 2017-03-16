@@ -1,4 +1,3 @@
-
 Paperclip.interpolates :contest_year do |attachment, style|
   attachment.instance.contest.year
 end

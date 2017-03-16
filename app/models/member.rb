@@ -6,7 +6,7 @@ class Member < ActiveRecord::Base
   has_many :photos, :dependent => :destroy
   has_many :votings, :dependent => :destroy
 
-  default_scope order('position, slug')
+  default_scope { order('position, slug') }
 
   def to_param
     slug
