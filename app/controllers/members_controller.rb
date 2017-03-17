@@ -18,10 +18,10 @@ class MembersController < ApplicationController
     Voting.vote(@member, request)
     if params[:type].eql?("list_voting")
       @members = @contest.members
-      render :file => "members/index.html.erb", :layout => false and return if request.xhr?
+      render file: 'members/index.html.erb', layout: false and return if request.xhr?
     end
     if params[:type].eql?("single_voting")
-      render :file => "members/show.html.erb", :layout => false and return if request.xhr?
+      render file: 'members/show.html.erb', layout: false and return if request.xhr?
     end
     redirect_to :back
   end

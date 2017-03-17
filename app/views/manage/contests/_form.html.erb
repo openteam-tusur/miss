@@ -1,15 +1,19 @@
-<%= semantic_form_for [:manage, @contest] do |form| %>
-  <%= form.inputs do %>
-    <%= form.input :year, :input_html => { :class => "focus_first" } %>
-    <%= form.date_input :voting_started_on %>
-    <%= form.date_input :voting_finished_on %>
-    <%= form.input :additional %>
-    <%= form.input :sponsors %>
+<%= semantic_form_for [:manage, @contest] do |f| %>
+  <%= f.inputs do %>
+    <%= f.input :year, input_html: { class: 'focus_first' } %>
+    <%= f.input :voting_started_on, as: :date %>
+    <%= f.input :voting_finished_on, as: :date %>
+    <%= f.input :additional %>
+    <%= f.input :sponsors %>
   <% end %>
-  <%= form.buttons do %>
-    <%= form.commit_button :button_html => { :class => "button" } %>
-    <li><%= link_to t(:cancel), smart_resource_url, :class => "button light" %></li>
-    <li class="floatr"><%= link_to t(:delete), [:manage, @contest], :class => "button light", :method => :delete, :confirm => "Вы точно хотите удалить конкурс со всеми его участницами?" unless @contest.new_record? %></li>
+  <%= f.actions do %>
+    <%= f.action :submit, button_html: { class: 'button' } %>
+    <li><%= link_to t(:cancel), smart_resource_url, class: 'button light' %></li>
+    <li class='floatr'>
+      <%= link_to t(:delete), [:manage, @contest], class: 'button light',
+        method: :delete,
+        confirm: 'Вы точно хотите удалить конкурс со всеми его участницами?' unless @contest.new_record? %>
+    </li>
   <% end %>
 <% end %>
 

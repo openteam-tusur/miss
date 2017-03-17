@@ -14,6 +14,7 @@ gem 'pg'
 gem 'rails', '~> 4.2.8'
 gem 'russian'
 gem 'sass-rails', '~> 5.0'
+gem 'sass', '3.4.19'
 gem 'uglifier', '>= 1.3.0'
 
 group :development do
