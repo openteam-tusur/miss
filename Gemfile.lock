@@ -1,5 +1,6 @@
 GEM
   remote: https://rubygems.org/
+  remote: https://rails-assets.org/
   specs:
     actionmailer (4.2.8)
       actionpack (= 4.2.8)
@@ -196,6 +197,9 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 4.2.8)
       sprockets-rails
+    rails-assets-colorbox (1.6.4)
+      rails-assets-jquery (>= 1.3.2)
+    rails-assets-jquery (3.1.1)
     rails-deprecated_sanitizer (1.0.3)
       activesupport (>= 4.2.0.alpha)
     rails-dom-testing (1.0.8)
@@ -299,6 +303,7 @@ DEPENDENCIES
   paperclip
   pg
   rails (~> 4.2.8)
+  rails-assets-colorbox!
   rr
   rspec-rails
   russian

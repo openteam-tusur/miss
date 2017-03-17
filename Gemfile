@@ -17,6 +17,10 @@ gem 'sass-rails', '~> 5.0'
 gem 'sass', '3.4.19'
 gem 'uglifier', '>= 1.3.0'
 
+source 'https://rails-assets.org' do
+  gem 'rails-assets-colorbox'
+end
+
 group :development do
   gem 'annotate'
   gem 'brakeman'

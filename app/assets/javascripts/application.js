@@ -1,6 +1,7 @@
 /*
  * = require jquery
  * = require jquery_ujs
+ * = require colorbox
  * = require_self
  */
 
@@ -68,24 +69,19 @@ $(function() {
 
   $(".focus_first:first").focus();
 
-  //$("form.formtastic li.date input").datepicker({
-    //changeMonth: true,
-    //changeYear: true
-  //});
-
   //$(".sortable").sortable({
     //axis: "y",
     //handle: "label, img",
     //cursor: "move"
   //});
 
-  //$('.member .photo_link').colorbox({
-    //opacity: "0.5",
-    //previous: "назад",
-    //next: "вперед",
-    //close: "закрыть",
-    //current:	"{current} из {total}"
-  //});
+  $('.member .photo_link').colorbox({
+    opacity: "0.5",
+    previous: "назад",
+    next: "вперед",
+    close: "закрыть",
+    current:	"{current} из {total}"
+  });
 
   create_slug();
 
