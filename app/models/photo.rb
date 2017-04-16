@@ -5,6 +5,8 @@ class Photo < ActiveRecord::Base
   belongs_to :member
   has_one :contest, through: :member
 
+  attr_accessible :image
+
   has_attached_file :image,
                     :url => '/photos/:contest_year/:member_slug/:id/:style.:extension',
                     :path => ':rails_root/public/photos/:contest_year/:member_slug/:id/:style.:extension',
@@ -32,6 +34,7 @@ class Photo < ActiveRecord::Base
                     }
 
   validates_attachment_presence :image
+  do_not_validate_attachment_file_type :image
 
   validates_uniqueness_of :image_fingerprint
 
@@ -43,7 +46,7 @@ end
 #
 # Table name: photos
 #
-#  id                        :integer         not null, primary key
+#  id                        :integer          not null, primary key
 #  member_id                 :integer
 #  image_file_name           :string(255)
 #  image_content_type        :string(255)
@@ -56,5 +59,5 @@ end
 #  image_small_dimensions    :string(255)
 #  created_at                :datetime
 #  updated_at                :datetime
+#  position                  :integer
 #
-

@@ -44,14 +44,14 @@ end
 #
 # Table name: contests
 #
-#  id                 :integer         not null, primary key
+#  id                 :integer          not null, primary key
 #  year               :integer
 #  published          :boolean
 #  current            :boolean
-#  voting_started_on  :date
-#  voting_finished_on :date
+#  voting_started_on  :datetime
+#  voting_finished_on :datetime
 #  sponsors           :text
 #  created_at         :datetime
 #  updated_at         :datetime
+#  additional         :text
 #
-

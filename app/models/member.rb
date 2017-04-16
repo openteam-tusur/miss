@@ -1,5 +1,8 @@
 class Member < ActiveRecord::Base
 
+  attr_accessible :slug, :name, :annotation,
+    :content, :nomination, :position
+
   validates_presence_of :slug, :name, :annotation, :content
 
   belongs_to :contest
@@ -32,7 +35,7 @@ end
 #
 # Table name: members
 #
-#  id         :integer         not null, primary key
+#  id         :integer          not null, primary key
 #  slug       :string(255)
 #  name       :string(255)
 #  annotation :text
@@ -43,4 +46,3 @@ end
 #  created_at :datetime
 #  updated_at :datetime
 #
-

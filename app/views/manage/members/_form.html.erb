@@ -6,8 +6,8 @@
     <%= form.input :annotation %>
     <%= form.input :content %>
   <% end %>
-  <%= form.buttons do %>
-    <%= form.commit_button :button_html => { :class => "button" } %>
+  <%= form.actions do %>
+    <%= form.action :submit, :button_html => { :class => "button" } %>
     <li><%= link_to t(:cancel), smart_resource_url, :class => "button light" %></li>
     <li><%= link_to t(:delete), [:manage, @contest, @member], :method => :delete,
                     :confirm => "Вы уверены, что хотите удалить участницу конкурса?",

@@ -1,5 +1,9 @@
 class Contest < ActiveRecord::Base
 
+  attr_accessible :year, :published, :current,
+    :voting_started_on, :voting_finished_on,
+    :sponsors
+
   validates_presence_of :year, :voting_started_on, :voting_finished_on
   validates_uniqueness_of :year
 
@@ -41,14 +45,14 @@ end
 #
 # Table name: contests
 #
-#  id                 :integer         not null, primary key
+#  id                 :integer          not null, primary key
 #  year               :integer
 #  published          :boolean
 #  current            :boolean
-#  voting_started_on  :date
-#  voting_finished_on :date
+#  voting_started_on  :datetime
+#  voting_finished_on :datetime
 #  sponsors           :text
 #  created_at         :datetime
 #  updated_at         :datetime
+#  additional         :text
 #
-

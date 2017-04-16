@@ -20,7 +20,7 @@ Rails.application.routes.draw do
 
   get '/:contest_id', to: 'members#index', as: :contest
   get '/:contest_id/:member_id', to: 'members#show', as: :member
-  get '/:contest_id/:member_id/vote', to: 'members#voting', as: :voting, via: :post
+  post '/:contest_id/:member_id/vote', to: 'members#voting', as: :voting
 
   root to: 'members#index'
 end
